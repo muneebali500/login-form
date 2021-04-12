@@ -1,0 +1,246 @@
+//////////////////////////////////
+//////// COLORS
+$color-primary-1: #de45bc;
+$color-primary-2: #f9f9f9;
+$color-white: #fff;
+$color-black: rgba(0,0,0, 0.5);
+
+// $box-shadow-1: inset .5rem .5rem 1rem rgba(0,0,0, 0.07),
+//             inset -.5rem -.5rem 1rem rgba(0,0,0, 0.07);
+$box-shadow-2: .5rem .5rem 1rem rgba(0,0,0, 0.2),
+               -.3rem -.3rem 0 #DE45BC;
+
+////////////////////////////////////
+/////////// MIXINS
+@mixin flex-center($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.6;
+    font-family: 'Yeon Sung', cursive;
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (max-width: 800px) {
+        grid-template-columns: 1fr;
+    }
+
+    & > div {
+        min-height: 100vh;
+        //padding: 5rem 0;
+    }
+
+
+} /* LOGIN CONTAINER ENDS HERE */
+
+.login__left--side {
+    background-color: $color-primary-2;
+    @include flex-center(column);
+    color: $color-primary-1;
+
+    .login {
+
+        &__title {
+            @include flex-center(column);
+            height: 18rem;
+            width: 18rem;
+            border-radius: 50%;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            box-shadow: $box-shadow-2;
+        }
+
+        &__form {
+            @include flex-center(column);
+            position: relative;
+            
+            p {
+                font-size: 1.3rem;
+                margin-top: 4rem;
+            }
+        }
+
+        &__username {
+            position: relative;
+        }
+
+        &__password {
+            position: relative;
+            width: 32rem;
+        }
+
+        &__input {
+            width: 100%;
+            padding: 2rem;
+            border-radius: .5rem;
+            font-size: 2.5rem;
+            margin: 1.3rem 0;
+            outline: none;
+            border: none;
+            background-color: $color-primary-2;
+            box-shadow: $box-shadow-2;
+            font-weight: bold;
+
+            &:focus + .login__placeholder,
+            &:valid + .login__placeholder {
+                transform: translateY(-3.5rem);
+                font-size: 1.4rem;
+                background-color: $color-white;
+            }
+        }
+
+        &__placeholder {
+            position: absolute;
+            top: 40%;
+            left: 5.5%;
+            font-size: 1.8rem;
+            padding: 0 .5rem;
+            pointer-events: none;
+            letter-spacing: .2rem;
+            transition: all 0.3s;
+        }
+
+        &__btn {
+            width: 26rem;
+            padding: 2rem 2.5rem;
+            font-size: 2rem;
+            color: $color-primary-1;
+            margin-top: 1.3rem;
+            border-radius: .8rem;
+            outline: none;
+            border: 1px solid rgba(0,0,0, 0.1);
+            box-shadow: $box-shadow-2;
+            background-color: $color-primary-2;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;     
+            font-family: 'Yeon Sung', cursive;      
+
+            &:hover {
+                transform: scale(1.05);
+                background-color: #fff;
+            }
+
+            &:active {
+                transform: scale(0.6);
+            }
+        }
+    }
+
+}   /* LOGIN LEFT SIDE ENDS HERE */
+
+.login__right--side {
+    background-color: $color-primary-1;
+    position: relative;
+    padding: 4rem 1rem;
+
+    @media only screen and (max-width: 800px) {
+        display: none;
+    }
+
+    .login__welcome {
+            font-size: 7rem;
+            color: $color-primary-2;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 4px;
+            text-shadow: 0 .5rem 0 rgba(0,0,0, 0.4);
+
+            span {
+                font-size: 6rem;
+                color: none;
+                text-shadow: 0 0 0 blue;
+            }
+    }
+
+    .countdown {
+        width: 100%;
+        @include position-center;
+        text-align: center;
+        margin-top: 4rem;
+
+        h3 {
+            font-size: 3.2rem;
+            color: $color-white;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+            text-shadow: 0 .4rem 0 rgba(0,0,0, 0.4);
+
+            span {
+                font-family: pacifico, cursive;
+                font-size: 4rem;
+            }
+        }
+        .time {
+            position: relative;
+
+            span {
+                position: relative;
+                font-size: 2.8rem;
+                margin: 3rem;
+                color: $color-white;
+                text-shadow: 0 4px 0 rgba(0,0,0, 0.4);
+                //font-family: pacifico, cursive;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -3rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 1.6rem;
+                    letter-spacing: 2px;
+                }
+
+                &#days::after {content: 'Days';}
+                &#hours::after {content: 'Hours';}
+                &#minutes::after {content: 'Minutes';}
+                &#seconds::after {content: 'Seconds';}
+            }
+
+            
+        }
+
+    }
+
+    
+}   /* LOGIN RIGHT SIDE ENDS HERE */
+
+.copyright {
+    position: absolute;
+    bottom: 2%;
+    right: 8rem;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/css/main.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="script.js" defer></script>
+
+    <title>LogIn Form</title>
+  </head>
+  <body>
+    <section id="section-login">
+      <div class="login-container">
+        <div class="login__left--side">
+          <h2 class="login__title">LogIn</h2>
+          <form action="" class="login__form">
+            <label for="" class="login__username">
+              <input
+                type="text"
+                class="login__input"
+                required
+                autocomplete="off"
+              />
+              <span class="login__placeholder">UserName</span>
+            </label>
+            <label for="" class="login__password">
+              <input type="password" class="login__input" required />
+              <span class="login__placeholder">Password</span>
+            </label>
+            <input type="submit" class="login__btn" value="Log" />
+            <p>Forget Password, <a href="">Click Here</a></p>
+          </form>
+        </div>
+
+        <div class="login__right--side">
+          <h2 class="login__welcome">Welcome<span>😀</span></h2>
+          <div class="countdown">
+            <h3><span>Eid-ul-Fitr</span> CountDown</h3>
+            <div class="time">
+              <span id="days" data-days>NA</span>
+              <span id="hours" data-hours>NA</span>
+              <span id="minutes" data-minutes>NA</span>
+              <span id="seconds" data-seconds>NA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- login Container ends here -->
+    </section>
+    <!-- logIn section ends here -->
+
+    <p class="copyright">&copy; Copyright by me. Dec-20</p>
+  </body>
+</html>
