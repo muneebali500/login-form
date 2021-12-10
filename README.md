@@ -15,7 +15,6 @@ This is a Frontend Development project Designed and Developed by me using HTML a
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - build up layout and content of the application.
 - [Sass/SCSS](https://sass-lang.com/documentation) - for adding custom styling.
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - to add functionalities throughout the application.
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - to add functionalities throughout the application.
 - [Visual Studio Code](https://code.visualstudio.com/) - the code editor being used to build the project.
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - used heavily for debugging during development process.
 - [Git](https://git-scm.com/) - the Git feature in VS Code was used for version control and push to github.
